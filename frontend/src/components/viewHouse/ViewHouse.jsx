@@ -15,7 +15,7 @@ function ViewHouse() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/houses-api/${houseId}`, {
+    fetch(`https://residence-finder-backend.onrender.com/houses-api/${houseId}`, {
       headers: { "Authorization": `Bearer ${sessionStorage.getItem('authToken')}` }
     })
       .then(res => res.json())
@@ -53,7 +53,7 @@ function ViewHouse() {
   const deleteHouse = async () => {
     if (window.confirm("Are you sure you want to delete this house?")) {
       try {
-        let res = await fetch(`http://localhost:4000/houses-api/${houseId}`, {
+        let res = await fetch(`https://residence-finder-backend.onrender.com/houses-api/${houseId}`, {
           method: "DELETE",
           headers: { "Authorization": `Bearer ${sessionStorage.getItem('authToken')}` }
         });
@@ -68,7 +68,7 @@ function ViewHouse() {
         console.log(error);
       }
       try {
-        await fetch(`http://localhost:4000/wishlist-api/${houseId}`, {
+        await fetch(`https://residence-finder-backend.onrender.com/wishlist-api/${houseId}`, {
           method: "DELETE",
           headers: { "Authorization": `Bearer ${sessionStorage.getItem('authToken')}` }
         });
@@ -81,7 +81,7 @@ function ViewHouse() {
   const removeFromWishlist = async () => {
     if (window.confirm("Are you sure you want to remove this house from your wishlist?")) {
       try {
-        let res = await fetch(`http://localhost:4000/wishlist-api/${houseId}`, {
+        let res = await fetch(`https://residence-finder-backend.onrender.com/wishlist-api/${houseId}`, {
           method: "DELETE",
           headers: { "Authorization": `Bearer ${sessionStorage.getItem('authToken')}` }
         });
