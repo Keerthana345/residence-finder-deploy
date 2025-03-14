@@ -36,7 +36,7 @@ function EditProfile() {
     let userId = modifiedUser._id;  
     delete modifiedUser._id;  
 
-    let res = await fetch(`http://localhost:4000/registrations-api/registrations/${userId}`, {
+    let res = await fetch(`https://residence-finder-backend.onrender.com/registrations-api/registrations/${userId}`, {
         method: 'PUT',
         headers: { 
             "Content-Type": "application/json",
