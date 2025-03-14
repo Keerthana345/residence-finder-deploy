@@ -10,7 +10,7 @@ function OwnerDashboard() {
 
   useEffect(() => {
     if (ownerLoginStatus && currentOwner) {
-      fetch(`http://localhost:4000/houses-api/owner/${currentOwner.username}`, {
+      fetch(`https://residence-finder-backend.onrender.com/houses-api/owner/${currentOwner.username}`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem('authToken')}` }
       })
         .then(res => res.json())
@@ -27,7 +27,7 @@ function OwnerDashboard() {
 
   const toggleOccupiedStatus = async (houseId, occupied) => {
     try {
-      let res = await fetch(`http://localhost:4000/houses-api/${houseId}`, {
+      let res = await fetch(`https://residence-finder-backend.onrender.com/houses-api/${houseId}`, {
         method: "PATCH",
         headers: { 
           "Content-Type": "application/json",
@@ -49,7 +49,7 @@ function OwnerDashboard() {
     }
 
     try {
-      await fetch(`http://localhost:4000/wishlist-api/${houseId}`, {
+      await fetch(`https://residence-finder-backend.onrender.com/wishlist-api/${houseId}`, {
         method: "PATCH",
         headers: { 
           "Content-Type": "application/json",
