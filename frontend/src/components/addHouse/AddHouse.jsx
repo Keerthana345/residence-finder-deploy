@@ -44,7 +44,7 @@ function AddHouse() {
     
   const houseData = { ...house, ownerUsername: currentOwner.username, images: roomPhotos, occupied: false };
   try {
-    let res = await fetch('https://residence-finder-backend.onrender.com/add', {
+    let res = await fetch('https://residence-finder-backend.onrender.com/houses-api/add', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
