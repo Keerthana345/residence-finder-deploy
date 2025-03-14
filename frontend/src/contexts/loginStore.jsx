@@ -10,7 +10,7 @@ function LoginStore({ children }) {
 
     async function loginUser(userCred) {
         try {
-            let res = await fetch(`http://localhost:4000/registrations-api/login`, {
+            let res = await fetch(`https://residence-finder-backend.onrender.com/registrations-api/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
