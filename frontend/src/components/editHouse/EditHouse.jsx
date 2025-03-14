@@ -16,7 +16,7 @@ function EditHouse() {
   useEffect(() => {
     async function fetchHouseDetails() {
       try {
-        let res = await fetch(`http://localhost:4000/houses-api/${houseId}`, {
+        let res = await fetch(`https://residence-finder-backend.onrender.com/houses-api/${houseId}`, {
           headers: { "Authorization": `Bearer ${sessionStorage.getItem('authToken')}` }
         });
         let data = await res.json();
@@ -76,7 +76,7 @@ function EditHouse() {
     
     const updatedHouse = { ...house, ownerUsername: currentOwner.username, images: roomPhotos };
     try {
-      let res = await fetch(`http://localhost:4000/houses-api/${houseId}`, {
+      let res = await fetch(`https://residence-finder-backend.onrender.com/houses-api/${houseId}`, {
         method: "PUT",
         headers: { 
           "Content-Type": "application/json",
