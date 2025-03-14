@@ -25,7 +25,7 @@ function Register() {
 
   async function onUserRegister(newUser) {
     try {
-      let res = await fetch('http://localhost:4000/registrations-api/registrations', {
+      let res = await fetch('https://residence-finder-backend.onrender.com/registrations-api/registrations', {
         method: 'POST',
         headers: { "content-type": "application/json" },
         body: JSON.stringify(newUser)
