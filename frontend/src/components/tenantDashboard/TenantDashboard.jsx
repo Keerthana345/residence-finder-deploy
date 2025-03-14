@@ -10,7 +10,7 @@ function TenantDashboard() {
 
   useEffect(() => {
     if (tenantLoginStatus && currentTenant) {
-      fetch(https://residence-finder-backend.onrender.com/wishlist-api/tenant/${currentTenant.username}`, {
+      fetch(`https://residence-finder-backend.onrender.com/wishlist-api/tenant/${currentTenant.username}`, {
         headers: { "Authorization": `Bearer ${sessionStorage.getItem('authToken')}` }
       })
         .then(res => res.json())
