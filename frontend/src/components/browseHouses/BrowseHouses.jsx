@@ -25,7 +25,7 @@ function BrowseHouses() {
 
       let tenantWishlistIds = [];
       if (tenantLoginStatus && currentTenant) {
-        const wishlistRes = await fetch(https://residence-finder-backend.onrender.com/wishlist-api/tenant/${currentTenant.username}`, {
+        const wishlistRes = await fetch(`https://residence-finder-backend.onrender.com/wishlist-api/tenant/${currentTenant.username}`, {
           headers: { "Authorization": `Bearer ${sessionStorage.getItem('authToken')}` }
         });
         const wishlistData = await wishlistRes.json();
