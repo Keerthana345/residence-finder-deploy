@@ -19,13 +19,13 @@ function BrowseHouses() {
 
   async function fetchData() {
     try {      
-      const housesRes = await fetch("http://localhost:4000/houses-api/");
+      const housesRes = await fetch("https://residence-finder-backend.onrender.com/houses-api/");
       const housesData = await housesRes.json();
       let availableHouses = housesData.data.filter(house => !house.occupied);
 
       let tenantWishlistIds = [];
       if (tenantLoginStatus && currentTenant) {
-        const wishlistRes = await fetch(`http://localhost:4000/wishlist-api/tenant/${currentTenant.username}`, {
+        const wishlistRes = await fetch(https://residence-finder-backend.onrender.com/wishlist-api/tenant/${currentTenant.username}`, {
           headers: { "Authorization": `Bearer ${sessionStorage.getItem('authToken')}` }
         });
         const wishlistData = await wishlistRes.json();
@@ -83,7 +83,7 @@ function BrowseHouses() {
   async function addToWishlist(house) {
     const houseData = { ...house, tenantUsername: currentTenant.username };
 
-    await fetch("http://localhost:4000/wishlist-api/add", {
+    await fetch("https://residence-finder-backend.onrender.com/wishlist-api/add", {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
